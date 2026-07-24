@@ -1,17 +1,18 @@
 import { useState } from 'react';
 
 const userData = {
-  name: "Elmer Alvarado",
-  avatarUrl: "https://i.pravatar.cc/100", // sample avatar
-  bio: "Appdev1 instructor.",
+  name: "Perfecto S. Gardoce III",
+  avatarUrl: "https://github.com/perfectolyle.png", // GitHub avatar
+  bio: "BSIS-3 Student.",
   skills: ["React", "JavaScript", "HTML", "CSS"],
   isOnline: true,
-  lastUpdated: "2 hours ago",
+  lastUpdated: "1 minute ago",
 };
 
 // <UserProfileCard user={userData} />
 function UserProfileCard({ user }) {
   const [messageCount, setMessageCount] = useState(0);
+  const [isFavorited, setIsFavorited] = useState(false);
 
   function handleSendMessage() {
     setMessageCount(messageCount + 1);
@@ -19,6 +20,10 @@ function UserProfileCard({ user }) {
 
   function handleReset() {
     setMessageCount(0);
+  }
+
+  function handleToggleFavorite() {
+    setIsFavorited((prev) => !prev);
   }
 
   return (
@@ -38,6 +43,11 @@ function UserProfileCard({ user }) {
           Messages sent: {messageCount}
         </div>
         {user.isOnline ? <span>🟢 Online</span> : <span>⚪ Offline</span>}
+        {user.isOnline && (
+          <button onClick={handleToggleFavorite}>
+            {isFavorited ? '★ Favorited' : '☆ Favorite'}
+          </button>
+        )}
         <button onClick={handleSendMessage}>Send Message</button>
         <button onClick={handleReset}>Reset</button>
       </div>
