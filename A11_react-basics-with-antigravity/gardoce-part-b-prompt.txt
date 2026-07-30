@@ -1,0 +1,46 @@
+Analyze @src\App.css @src\components\tracks\SongList.css and restyle my
+playlist-dojo app so it reads like a real Spotify mobile playlist screen
+instead of a plain stacked list of bordered boxes.
+
+Only modify those two CSS files. Do not create new files and do not edit
+any .jsx files, so work with the class names that already exist
+(.page, .title, .song-card, .song, .album-cover, .song-info) plus element
+selectors and CSS pseudo-elements.
+
+Design direction I want:
+
+1. Palette. Near-black page background (#121212), slightly lifted row
+   surfaces in the #181818 to #282828 range, and #1DB954 green as the
+   ONLY accent color. Secondary text (artist names, play counts) in
+   #B3B3B3 so there is a clear text hierarchy.
+
+2. Header. Make it feel like a playlist detail page, not a heading. Put a
+   soft green-to-transparent gradient behind the title area that fades
+   down into the page background. The h1 should be much larger, heavier,
+   and tighter in letter-spacing. Style the curator line and the
+   "NOW PLAYING" line as small uppercase labels with wide letter-spacing.
+
+3. Track rows, not cards. Drop the heavy 1px borders and boxy look. Each
+   track should read as a full-width row with generous vertical padding
+   and a smooth hover state that lifts the row background and slightly
+   scales the album art.
+
+4. Album art. Larger than the current 64px, still square, rounded corners,
+   with a soft drop shadow so it sits above the row.
+
+5. Play button. Add a circular green play button on each row built purely
+   with an ::after pseudo-element on the row, fading in on hover. No new
+   markup.
+
+6. Dividers. Hide the <hr> elements and use spacing plus a very subtle
+   row separator line instead.
+
+7. Layout. Constrain everything to a phone-width column centered on the
+   page, so it looks like a mobile app even when viewed on a desktop
+   browser.
+
+8. Motion. Add smooth transitions on the hover states so it feels
+   responsive rather than snapping.
+
+Keep the app fully functional, keep every piece of existing text content,
+and maintain readable contrast for accessibility.
